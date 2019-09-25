@@ -23,6 +23,24 @@ class Stack {
     printContents() {
         this.storage.forEach(elem => console.log(elem));
     }
+
+}
+
+function sortStack(input) {
+
+    const output = new Stack();
+
+    while (!input.isEmpty()) {
+        const temp = input.pop();
+
+        while (!output.isEmpty() && output.peek() > temp) {
+            input.push(output.pop())
+        }
+
+        output.push(temp);
+    }
+
+    return output;
 }
 
 const s = new Stack();
@@ -35,6 +53,6 @@ s.push(6);
 
 console.log(s.storage)
 
-// const sortedStack = sortStack(s); // sortedStack is also a Stack instance
+const sortedStack = sortStack(s); // sortedStack is also a Stack instance
 
-// sortedStack.printContents();  // should print 1, 4, 5, 6, 8, 10
+sortedStack.printContents();  // should print 1, 4, 5, 6, 8, 10
