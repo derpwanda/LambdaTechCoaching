@@ -51,8 +51,9 @@ s.push(5);
 s.push(1);
 s.push(6);
 
-console.log(s.storage)
+console.log("original array", s.storage)
 
 const sortedStack = sortStack(s); // sortedStack is also a Stack instance
 
-sortedStack.printContents();  // should print 1, 4, 5, 6, 8, 10
+console.log("sorted array", sortedStack.storage)
+// sortedStack.printContents();  // should print 1, 4, 5, 6, 8, 10
